@@ -11,6 +11,7 @@ export type SystemPurposeId =
   | 'Executive'
   | 'Generic'
   | 'Scientist'
+  | 'YouTubeTranscriber'
   // @update DeFiFoFum Additions
   | 'FrontendDeveloper'
   | 'SolidityDeveloper'
