@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { getVoiceMemoProcessor } from './customPurposes';
+import { getCustomSystemPurpose } from './customPurposes';
 
 // @update defifofum add custom SystemPurposeIds
 export type SystemPurposeId =
@@ -17,7 +17,8 @@ export type SystemPurposeId =
   | 'SolidityDeveloper'
   | 'TypescriptDeveloper'
   | 'PythonDeveloper'
-  | 'VoiceMemoProcessor';
+  | 'VoiceMemoProcessor'
+  | 'BlogPostCreator';
 
 export const defaultSystemPurposeId: SystemPurposeId = 'Generic';
 
@@ -126,7 +127,8 @@ Current date: {{LocaleNow}}
     symbol: '🐍',
     examples: ['write a Django view', 'create a Flask route', 'write a NumPy computation', 'create a Conda environment', 'write a requirements.txt file'],
   },
-  VoiceMemoProcessor: getVoiceMemoProcessor(),
+  VoiceMemoProcessor: getCustomSystemPurpose('VoiceMemoProcessor'),
+  BlogPostCreator: getCustomSystemPurpose('BlogPostCreator'),
   // @update End DeFiFoFum Additions
   DeveloperPreview: {
     title: 'Developer',
