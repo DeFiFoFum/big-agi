@@ -18,7 +18,8 @@ export type SystemPurposeId =
   | 'TypescriptDeveloper'
   | 'PythonDeveloper'
   | 'VoiceMemoProcessor'
-  | 'BlogPostCreator';
+  | 'BlogPostCreator'
+  | 'DataScientist';
 
 export const defaultSystemPurposeId: SystemPurposeId = 'Generic';
 
@@ -129,6 +130,7 @@ Current date: {{LocaleNow}}
   },
   VoiceMemoProcessor: getCustomSystemPurpose('VoiceMemoProcessor'),
   BlogPostCreator: getCustomSystemPurpose('BlogPostCreator'),
+  DataScientist: getCustomSystemPurpose('DataScientist'),
   // @update End DeFiFoFum Additions
   DeveloperPreview: {
     title: 'Developer',

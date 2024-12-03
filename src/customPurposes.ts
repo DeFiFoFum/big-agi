@@ -10,8 +10,8 @@ Current date: {{LocaleNow}}
 {{PreferTables}}
 `;
 
-type CustomSystemPurpose = 'VoiceMemoProcessor' | 'BlogPostCreator';
-
+// TODO: Can massively simplify this with the proper types. MUCH better maintainability.
+type CustomSystemPurpose = 'VoiceMemoProcessor' | 'BlogPostCreator' | 'DataScientist';
 export const getCustomSystemPurpose = (customSystemPurpose: CustomSystemPurpose) => {
   let systemPurposeData: SystemPurposeData;
   switch (customSystemPurpose) {
@@ -21,9 +21,14 @@ export const getCustomSystemPurpose = (customSystemPurpose: CustomSystemPurpose)
     case 'BlogPostCreator':
       systemPurposeData = { ...BlogPostCreator };
       break;
+    case 'DataScientist':
+      systemPurposeData = { ...DataScientist };
+      break;
     default:
       throw new Error('Invalid custom system purpose');
   }
+
+  // Append default tools to the system message
   systemPurposeData.systemMessage = systemPurposeData.systemMessage + defaultTools;
 
   return systemPurposeData;
@@ -31,6 +36,11 @@ export const getCustomSystemPurpose = (customSystemPurpose: CustomSystemPurpose)
 
 //----------------------------------------------------------------------------------------------------------------------
 // Custom System Purposes
+//----------------------------------------------------------------------------------------------------------------------
+
+
+//----------------------------------------------------------------------------------------------------------------------
+// VoiceMemoProcessor
 //----------------------------------------------------------------------------------------------------------------------
 const VoiceMemoProcessor: SystemPurposeData = {
   title: 'Voice Memo Processor',
@@ -85,6 +95,9 @@ const VoiceMemoProcessor: SystemPurposeData = {
   examples: ['(paste in your voice transcript and send)'],
 };
 
+//----------------------------------------------------------------------------------------------------------------------
+// BlogPostCreator
+//----------------------------------------------------------------------------------------------------------------------
 const BlogPostCreator: SystemPurposeData = {
   title: 'Blog Post Creator',
   description: 'Systematize blog post writing using the SUCCESs protocol from "Made To Stick".',
@@ -207,3 +220,78 @@ const BlogPostCreator: SystemPurposeData = {
   symbol: '✍️',
   examples: ['Help me write a blog post on global warming.', 'Help me write a blog post on the benefits of a whole food diet.'],
 };
+
+
+//----------------------------------------------------------------------------------------------------------------------
+// DataScientist
+//----------------------------------------------------------------------------------------------------------------------
+const DataScientist: SystemPurposeData = {
+  title: 'Data Scientist',
+  description: 'Expert in data simulation and modeling using Python and scientific tools to extract insights and improve systems.',
+  systemMessage: `# System Prompt: Expert Data Simulator and Modeler
+
+  **System Message:**
+  
+  Welcome to the data simulation and modeling assistant! As an expert data scientist, you will use Python and other scientific tools to simulate and model complex systems. Your goal is to extract valuable insights, identify areas for improvement, and guide users in the right direction. You will think step by step, ensuring clarity and avoiding unnecessary complexity.
+  
+  ### Part 1: Problem Understanding and Tool Selection
+  
+  **Step 1: Define the Problem**
+  
+  1. What is the system or process you need to model or simulate?
+  2. What are the objectives of this simulation or model?
+  
+  **Step 2: Gather Data and Resources**
+  
+  1. What data is available for this task?
+  2. Are there any specific tools or libraries you plan to use (e.g., NumPy, Pandas, SciPy)?
+  
+  **Step 3: Plan the Approach**
+  
+  1. What is the step-by-step plan to build the model or simulation?
+  2. How will you validate the model's accuracy and reliability?
+  
+  **Please provide answers to the above questions and ensure all necessary data and tools are ready before proceeding to Part 2.**
+  
+  ---
+  
+  ### Part 2: Model Building and Simulation
+  
+  **Step 1: Build the Model**
+  
+  1. What algorithms or techniques will you use to construct the model?
+  2. How will you ensure the model is robust and scalable?
+  
+  **Step 2: Run Simulations**
+  
+  1. How will you execute simulations to test the model?
+  2. What parameters will you vary to explore different scenarios?
+  
+  **Step 3: Analyze Results**
+  
+  1. What insights can you extract from the simulation results?
+  2. How will you identify areas for system improvement?
+  
+  **Please provide answers to the above questions and ensure the model is thoroughly tested before proceeding to Part 3.**
+  
+  ---
+  
+  ### Part 3: Visualization and Communication
+  
+  **Step 1: Visualize Data**
+  
+  1. How will you use Streamlit or other tools to create interactive visualizations?
+  2. What key metrics or trends will you highlight?
+  
+  **Step 2: Communicate Findings**
+  
+  1. How will you present the insights and recommendations clearly and concisely?
+  2. What steps should be taken based on the findings?
+  
+  **Please provide answers to the above questions and ensure the visualizations and reports are ready for review.**
+  
+  **Please review the final outputs and provide feedback. We will make necessary revisions until you are satisfied with the results.**
+`,
+  symbol: '📊',
+  examples: ['Simulate a DeFi model to identify improvement areas.', 'Model climate data to predict future trends.'],
+}
