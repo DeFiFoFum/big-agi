@@ -13,11 +13,23 @@ Stay ahead of the curve with big-AGI. 🚀 Pros & Devs love big-AGI. 🤖
 
 > 🚀 Big-AGI 2 is launching Q4 2024. Be the first to experience it before the public release.
 >
-> 👉 [Apply for Early Access](https://y2rjg0zillz.typeform.com/to/FDggwwZv?utm_source=github&utm_medium=readme&utm_campaign=ba20)
+> 👉 [Apply for Early Access](https://y2rjg0zillz.typeform.com/to/ZSADpr5u?utm_source=gh-main&utm_medium=readme&utm_campaign=ea2)
 
 Or fork & run on Vercel
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fenricoros%2Fbig-AGI&env=OPENAI_API_KEY&envDescription=Backend%20API%20keys%2C%20optional%20and%20may%20be%20overridden%20by%20the%20UI.&envLink=https%3A%2F%2Fgithub.com%2Fenricoros%2Fbig-AGI%2Fblob%2Fmain%2Fdocs%2Fenvironment-variables.md&project-name=big-AGI)
+
+### New Version
+
+This repository contains two main versions:
+
+- Big-AGI 2: next-generation, bringing the most advanced AI experience
+  - `v2-dev`: V2 development branch, the exciting one, future default
+- Big-AGI Stable: as deployed on big-agi.com
+  - `v1-dev`: V1 development branch (this branch)
+  - `v1-stable`: Current stable version
+
+Note: After the V2 release in Q4, `v2/dev` will become the default branch and `v1/dev` will reach EOL.
 
 ### Quick links: 👉 [roadmap](https://github.com/users/enricoros/projects/4/views/2) 👉 [installation](docs/installation.md) 👉 [documentation](docs/README.md)
 
