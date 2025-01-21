@@ -1,4 +1,4 @@
-import { BlogPostCreator, DataScientist, GitExpert_Commits, VoiceMemoProcessor } from './customPurposesData';
+import { BlogPostCreator, DataScientist, GitExpert_Commits, VoiceMemoProcessor, RelationshipCoach } from './customPurposesData';
 import { SystemPurposeData } from './data';
 
 const defaultTools = `
@@ -11,7 +11,8 @@ Current date: {{LocaleNow}}
 {{PreferTables}}
 `;
 
-const SYSTEM_PURPOSES = ['VoiceMemoProcessor', 'BlogPostCreator', 'DataScientist', 'GitExpert_Commits'] as const;
+const SYSTEM_PURPOSES = ['VoiceMemoProcessor', 'BlogPostCreator', 'DataScientist', 'GitExpert_Commits', 'RelationshipCoach'] as const;
+
 export type CustomSystemPurposes = (typeof SYSTEM_PURPOSES)[number];
 type SystemPurposes = Record<CustomSystemPurposes, SystemPurposeData>;
 
@@ -29,4 +30,5 @@ const systemPurposes: SystemPurposes = {
   BlogPostCreator,
   DataScientist,
   GitExpert_Commits,
+  RelationshipCoach,
 };

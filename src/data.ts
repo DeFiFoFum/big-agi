@@ -53,6 +53,48 @@ Current date: {{LocaleNow}}
     call: { starters: ['Hey, how can I assist?', 'AI assistant ready. What do you need?', 'Ready to assist.', 'Hello.'] },
     voices: { elevenLabs: { voiceId: 'z9fAnlkpzviPz146aGWa' } },
   },
+  DeveloperPreview: {
+    title: 'Developer',
+    description: 'Extended-capabilities Developer',
+    // systemMessageNotes: 'Knowledge cutoff is set to "Current" instead of "{{Cutoff}}" to lower push backs',
+    systemMessage: `You are a sophisticated, accurate, and modern AI programming assistant.
+Knowledge cutoff: {{Cutoff}}
+Current date: {{LocaleNow}}
+
+{{RenderPlantUML}}
+{{RenderMermaid}}
+{{RenderSVG}}
+{{PreferTables}}
+`, // {{InputImage0}} {{ToolBrowser0}}
+    symbol: '👨‍💻',
+    imageUri: '/images/personas/dev_preview_icon_120x120.webp',
+    examples: [
+      'show me an OAuth2 diagram',
+      'draw a capybara as svg code',
+      'implement a custom hook in my React app',
+      'migrate a React app to Next.js',
+      'optimize my AI model for energy efficiency',
+      'optimize serverless architectures',
+    ],
+    call: { starters: ['Dev here. Got code?', "Developer on call. What's the issue?", 'Ready to code.', 'Hello.'] },
+    voices: { elevenLabs: { voiceId: 'yoZ06aMxZJJ28mfd3POQ' } },
+    // highlighted: true,
+  },
+  Developer: {
+    title: 'Dev',
+    description: 'Helps you code',
+    systemMessage: 'You are a sophisticated, accurate, and modern AI programming assistant', // skilled, detail-oriented
+    symbol: '👨‍💻',
+    examples: [
+      'hello world in 10 languages',
+      'translate python to typescript',
+      'find and fix a bug in my code',
+      'add a mic feature to my NextJS app',
+      'automate tasks in React',
+    ],
+    call: { starters: ['Dev here. Got code?', "Developer on call. What's the issue?", 'Ready to code.', 'Hello.'] },
+    voices: { elevenLabs: { voiceId: 'yoZ06aMxZJJ28mfd3POQ' } },
+  },
   // @update Start DeFiFoFum Additions - Order matters in the FE
   FrontendDeveloper: {
     title: 'Frontend Developer (Typescript)',
@@ -130,49 +172,8 @@ Current date: {{LocaleNow}}
   BlogPostCreator: getCustomSystemPurpose('BlogPostCreator'),
   DataScientist: getCustomSystemPurpose('DataScientist'),
   GitExpert_Commits: getCustomSystemPurpose('GitExpert_Commits'),
+  RelationshipCoach: getCustomSystemPurpose('RelationshipCoach'),
   // @update End DeFiFoFum Additions
-  DeveloperPreview: {
-    title: 'Developer',
-    description: 'Extended-capabilities Developer',
-    // systemMessageNotes: 'Knowledge cutoff is set to "Current" instead of "{{Cutoff}}" to lower push backs',
-    systemMessage: `You are a sophisticated, accurate, and modern AI programming assistant.
-Knowledge cutoff: {{Cutoff}}
-Current date: {{LocaleNow}}
-
-{{RenderPlantUML}}
-{{RenderMermaid}}
-{{RenderSVG}}
-{{PreferTables}}
-`, // {{InputImage0}} {{ToolBrowser0}}
-    symbol: '👨‍💻',
-    imageUri: '/images/personas/dev_preview_icon_120x120.webp',
-    examples: [
-      'show me an OAuth2 diagram',
-      'draw a capybara as svg code',
-      'implement a custom hook in my React app',
-      'migrate a React app to Next.js',
-      'optimize my AI model for energy efficiency',
-      'optimize serverless architectures',
-    ],
-    call: { starters: ['Dev here. Got code?', "Developer on call. What's the issue?", 'Ready to code.', 'Hello.'] },
-    voices: { elevenLabs: { voiceId: 'yoZ06aMxZJJ28mfd3POQ' } },
-    // highlighted: true,
-  },
-  Developer: {
-    title: 'Dev',
-    description: 'Helps you code',
-    systemMessage: 'You are a sophisticated, accurate, and modern AI programming assistant', // skilled, detail-oriented
-    symbol: '👨‍💻',
-    examples: [
-      'hello world in 10 languages',
-      'translate python to typescript',
-      'find and fix a bug in my code',
-      'add a mic feature to my NextJS app',
-      'automate tasks in React',
-    ],
-    call: { starters: ['Dev here. Got code?', "Developer on call. What's the issue?", 'Ready to code.', 'Hello.'] },
-    voices: { elevenLabs: { voiceId: 'yoZ06aMxZJJ28mfd3POQ' } },
-  },
   Scientist: {
     title: 'Scientist',
     description: 'Helps you write scientific papers',
